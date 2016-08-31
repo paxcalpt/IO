@@ -461,6 +461,11 @@ public class HandleExtraFileTypes extends ImagePlus implements PlugIn {
 			return tryPlugIn("org.janelia.it.fiji.plugins.h5j.H5j_Reader", path);
 		}
 
+		// Ricardo Henriques: read NanoJ compressed NJI format 
+		if (name.endsWith(".nji")) {
+			return tryPlugIn("nanoj.core.java.gui.tools.io.OpenNanoJStack_", path);
+		}
+
 		// ****************** MODIFY HERE ******************
 		// do what ever you have to do to recognise your own file type
 		// and then call appropriate plugin using the above as models
